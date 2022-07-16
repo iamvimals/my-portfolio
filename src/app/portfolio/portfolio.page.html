@@ -1,0 +1,106 @@
+<ion-header [translucent]="true">
+  <div class="topnav" id="myTopnav">
+    <a href="/home" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/resume">Resume</a>
+    <a href="javascript:void(0);" class="icon" (click)="resizeMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </a>
+  </div>
+</ion-header>
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <span id="portfolio-title">Portfolio</span>
+    </ion-col>
+  </ion-row>
+
+  <!--Cards content - Desktop-->
+  <ion-grid *ngIf="isDesktop">
+    <ion-row>
+      <ion-col *ngFor="let project of projectsInfo" size="4">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>{{project.category}}</ion-card-subtitle>
+              <ion-card-title>{{project.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content> {{project.description}} </ion-card-content>
+            <ion-card-content>
+              <ion-icon name="{{project.icon}}"></ion-icon>
+              <a href="" target="_blank">
+                <ion-icon name="logo-github" style="float: right"></ion-icon>
+              </a>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--Cards content - Mobile-->
+  <ion-grid *ngIf="!isDesktop">
+    <ion-row id="ion-row-expand">
+      <ion-col *ngFor="let project of projectsInfo" size="12">
+        <div>
+          <ion-card>
+            <ion-card-header>
+              <ion-card-subtitle>{{project.category}}</ion-card-subtitle>
+              <ion-card-title>{{project.title}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content> {{project.description}} </ion-card-content>
+            <ion-card-content>
+              <ion-icon name="{{project.icon}}"></ion-icon>
+              <a href="" target="_blank">
+                <ion-icon name="logo-github" style="float: right"></ion-icon>
+              </a>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!--Footer content-->
+  <ion-row class="footer-content">
+    <ion-col>
+      <span id="footer-about-text">About This Page</span><br /><br />
+      <span class="footer-copyright-text"
+        >This website was coded in HTML, CSS, and Javascript.</span
+      ><br />
+      <span class="footer-copyright-text">The source code can be found </span>
+      <a href="" target="_blank" style="color: #8490ff; text-decoration: none"
+        >here</a
+      ><br /><br />
+      <span class="footer-copyright-text"
+        >Copyright &copy; 2021 All rights reserved</span
+      >
+    </ion-col>
+    <ion-col>
+      <span id="footer-connect-text">Connect</span><br /><br />
+      <span>Let's be social.</span><br />
+      <a href="" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-google"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-medium"></ion-icon>
+      </a>
+    </ion-col>
+  </ion-row>
+</ion-content>

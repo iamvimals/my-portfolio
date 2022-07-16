@@ -1,0 +1,284 @@
+<ion-header [translucent]="true">
+  <div class="topnav" id="myTopnav">
+    <a href="/home" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/resume">Resume</a>
+    <a href="javascript:void(0);" class="icon" (click)="resizeMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </a>
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div [class.container]="isDesktop" [class.container-mobile]="!isDesktop">
+    <ion-row>
+      <ion-col style="padding-top: 150px">
+        <span id="sub-text">I am</span><br />
+        <span id="main-text">[Name]</span><br />
+        <span id="sub-text">A [Title]</span>
+      </ion-col>
+      <ion-col>
+        <img
+          src="../../assets/files/data.gif"
+          alt=""
+          style="margin-left: 0px"
+          *ngIf="isDesktop"
+        />
+      </ion-col>
+    </ion-row>
+
+    <ion-row id="horizontal-line" *ngIf="!isDesktop"></ion-row>
+
+    <div class="downArrow bounce" *ngIf="isDesktop">
+      <img
+        width="40"
+        height="40"
+        alt=""
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDMyIDMyIiBoZWlnaHQ9IjMycHgiIGlkPSLQodC70L7QuV8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiAzMiIgd2lkdGg9IjMycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik0yNC4yODUsMTEuMjg0TDE2LDE5LjU3MWwtOC4yODUtOC4yODhjLTAuMzk1LTAuMzk1LTEuMDM0LTAuMzk1LTEuNDI5LDAgIGMtMC4zOTQsMC4zOTUtMC4zOTQsMS4wMzUsMCwxLjQzbDguOTk5LDkuMDAybDAsMGwwLDBjMC4zOTQsMC4zOTUsMS4wMzQsMC4zOTUsMS40MjgsMGw4Ljk5OS05LjAwMiAgYzAuMzk0LTAuMzk1LDAuMzk0LTEuMDM2LDAtMS40MzFDMjUuMzE5LDEwLjg4OSwyNC42NzksMTAuODg5LDI0LjI4NSwxMS4yODR6IiBmaWxsPSIjMTIxMzEzIiBpZD0iRXhwYW5kX01vcmUiLz48Zy8+PGcvPjxnLz48Zy8+PGcvPjxnLz48L3N2Zz4="
+      />
+    </div>
+
+    <!--Areas content-->
+    <ion-row>
+      <ion-col id="areas-column">
+        <span id="areas-text">Areas of Interest</span>
+        <br />
+        <span id="areas-sub-text"
+          >Take a look at some of the things I love working on.</span
+        >
+      </ion-col>
+    </ion-row>
+
+    <!--Areas cards content - Desktop-->
+    <ion-grid *ngIf="isDesktop">
+      <ion-row>
+        <ion-col *ngFor="let areas of areasInfo" size="4">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <ion-icon id="areas-ion-icon" name="{{areas.icon}}"></ion-icon>
+                <ion-card-title>{{areas.areaName}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content> {{areas.description}} </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Areas cards content - Mobile-->
+    <ion-grid *ngIf="!isDesktop">
+      <ion-row id="ion-row-expand">
+        <ion-col *ngFor="let areas of areasInfo" size="12">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <ion-icon id="areas-ion-icon" name="{{areas.icon}}"></ion-icon>
+                <ion-card-title>{{areas.areaName}}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content> {{areas.description}} </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row id="horizontal-line"></ion-row>
+
+    <!--Skills content-->
+    <ion-row>
+      <ion-col id="areas-column">
+        <span id="areas-text">Skills</span>
+        <br />
+        <span id="areas-sub-text"
+          >I have some experience working with these.</span
+        >
+      </ion-col>
+    </ion-row>
+
+    <!--Languages cards content-->
+    <ion-row>
+      <ion-col id="areas-column">
+        <span id="left-align-text">Languages</span>
+        <br />
+      </ion-col>
+    </ion-row>
+
+    <!--Languages cards content - Desktop-->
+    <ion-grid *ngIf="isDesktop">
+      <ion-row>
+        <ion-col *ngFor="let language of languagesInfo" size="2">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img
+                  src="{{language.logo}}"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{language.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Languages cards content - Mobile-->
+    <ion-grid *ngIf="!isDesktop">
+      <ion-row id="ion-row-expand">
+        <ion-col *ngFor="let language of languagesInfo" size="12">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img
+                  src="{{language.logo}}"
+                  alt=""
+                  width="50px"
+                  height="50px"
+                />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{language.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Tools cards content-->
+    <ion-row>
+      <ion-col id="areas-column">
+        <span id="left-align-text">Tools</span>
+        <br />
+      </ion-col>
+    </ion-row>
+
+    <!--Tools cards content - Desktop-->
+    <ion-grid *ngIf="isDesktop">
+      <ion-row>
+        <ion-col *ngFor="let tool of toolsInfo" size="2">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img src="{{tool.logo}}" alt="" width="60px" height="60px" />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{tool.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Tools cards content - Mobile-->
+    <ion-grid *ngIf="!isDesktop">
+      <ion-row id="ion-row-expand">
+        <ion-col *ngFor="let tool of toolsInfo" size="12">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img src="{{tool.logo}}" alt="" width="60px" height="60px" />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{tool.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Libraries cards content-->
+    <ion-row>
+      <ion-col id="areas-column">
+        <span id="left-align-text">Libraries</span>
+        <br />
+      </ion-col>
+    </ion-row>
+
+    <!--Libraries cards content - Desktop-->
+    <ion-grid *ngIf="isDesktop">
+      <ion-row>
+        <ion-col *ngFor="let library of librariesInfo" size="2">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img src="{{library.logo}}" alt="" width="60px" height="60px" />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{library.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Libraries cards content - Mobile-->
+    <ion-grid *ngIf="!isDesktop">
+      <ion-row id="ion-row-expand">
+        <ion-col *ngFor="let library of librariesInfo" size="12">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <img src="{{library.logo}}" alt="" width="60px" height="60px" />
+              </ion-card-header>
+              <ion-card-content>
+                <ion-badge color="dark">{{library.rating}} / 10</ion-badge>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <!--Footer content-->
+    <ion-row class="footer-content">
+      <ion-col>
+        <span id="footer-about-text">About This Page</span><br /><br />
+        <span class="footer-copyright-text"
+          >This website was coded in HTML, CSS, and Javascript.</span
+        ><br />
+        <span class="footer-copyright-text">The source code can be found </span>
+        <a href="" target="_blank" style="color: #8490ff; text-decoration: none"
+          >here</a
+        ><br /><br />
+        <span class="footer-copyright-text"
+          >Copyright &copy; 2021 All rights reserved</span
+        >
+      </ion-col>
+      <ion-col>
+        <span id="footer-connect-text">Connect</span><br /><br />
+        <span>Let's be social.</span><br />
+        <a href="" target="_blank">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-google"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-github"></ion-icon>
+        </a>
+        <a href="" target="_blank">
+          <ion-icon name="logo-medium"></ion-icon>
+        </a>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

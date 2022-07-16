@@ -1,0 +1,122 @@
+<ion-header [translucent]="true">
+  <div class="topnav" id="myTopnav">
+    <a href="/home" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/resume">Resume</a>
+    <a href="javascript:void(0);" class="icon" (click)="resizeMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </a>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <span id="about-title">About</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <span id="about-info"
+        >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.</span
+      >
+    </ion-col>
+  </ion-row>
+
+  <ion-row id="horizontal-line"></ion-row>
+
+  <!-- Timeline content - Desktop-->
+  <div class="container" *ngIf="isDesktop">
+    <div class="timeline">
+      <div class="timeline-container primary" *ngFor="let item of timelineInfo">
+        <div class="timeline-icon">
+          <i class="far fa-grin-wink"></i>
+        </div>
+        <div class="timeline-body">
+          <h5 class="timeline-title">
+            <span class="badge">{{item.fromYear}} - {{item.toYear}}</span
+            ><ion-title style="float: right">{{item.duration}}</ion-title>
+          </h5>
+          <ion-title>{{item.title}}</ion-title>
+          <ion-title>{{item.location}}</ion-title><br />
+          <ion-title *ngIf="item.grade">{{item.grade}}</ion-title>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline content - Mobile -->
+  <div class="container" *ngIf="!isDesktop">
+    <div class="timeline">
+      <div class="timeline-container primary" *ngFor="let item of timelineInfo">
+        <div class="timeline-icon">
+          <i class="far fa-grin-wink"></i>
+        </div>
+        <div class="timeline-body">
+          <h5 class="timeline-title">
+            <span class="badge">{{item.fromYear}} - {{item.toYear}}</span
+            ><ion-title style="float: right">{{item.duration}}</ion-title>
+          </h5>
+          <br />
+          <ion-title style="overflow-wrap: break-word; word-wrap: break-word"
+            >{{item.title}}</ion-title
+          >
+          <br />
+          <ion-title>{{item.location}}</ion-title>
+          <br />
+          <ion-title *ngIf="item.grade">{{item.grade}}</ion-title>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Footer content-->
+  <ion-row class="footer-content">
+    <ion-col>
+      <span id="footer-about-text">About This Page</span><br /><br />
+      <span class="footer-copyright-text"
+        >This website was coded in HTML, CSS, and Javascript.</span
+      ><br />
+      <span class="footer-copyright-text">The source code can be found </span>
+      <a href="" target="_blank" style="color: #8490ff; text-decoration: none"
+        >here</a
+      ><br /><br />
+      <span class="footer-copyright-text"
+        >Copyright &copy; 2021 All rights reserved</span
+      >
+    </ion-col>
+    <ion-col>
+      <span id="footer-connect-text">Connect</span><br /><br />
+      <span>Let's be social.</span><br />
+      <a href="" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-google"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-medium"></ion-icon>
+      </a>
+    </ion-col>
+  </ion-row>
+</ion-content>

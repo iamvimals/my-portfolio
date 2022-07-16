@@ -1,0 +1,74 @@
+<ion-header [translucent]="true">
+  <div class="topnav" id="myTopnav">
+    <a href="/home" class="active">Home</a>
+    <a href="/about">About</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/resume">Resume</a>
+    <a href="javascript:void(0);" class="icon" (click)="resizeMenu()">
+      <ion-icon name="menu-outline"></ion-icon>
+    </a>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <span id="resume-title">Resume</span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <span id="sub-text">Click here to view my resume</span>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <a href="" target="_blank">
+        <button id="resume-view-button">Resume</button>
+      </a>
+    </ion-col>
+  </ion-row>
+
+  <!--Footer content-->
+  <ion-row class="footer-content" [class.footer-content-mobile]="!isDesktop">
+    <ion-col>
+      <span id="footer-about-text">About This Page</span><br /><br />
+      <span class="footer-copyright-text"
+        >This website was coded in HTML, CSS, and Javascript.</span
+      ><br />
+      <span class="footer-copyright-text">The source code can be found </span>
+      <a href="" target="_blank" style="color: #8490ff; text-decoration: none"
+        >here</a
+      ><br /><br />
+      <span class="footer-copyright-text"
+        >Copyright &copy; 2021 All rights reserved</span
+      >
+    </ion-col>
+    <ion-col>
+      <span id="footer-connect-text">Connect</span><br /><br />
+      <span>Let's be social.</span><br />
+      <a href="" target="_blank">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-google"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+      <a href="" target="_blank">
+        <ion-icon name="logo-medium"></ion-icon>
+      </a>
+    </ion-col>
+  </ion-row>
+</ion-content>

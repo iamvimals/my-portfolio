@@ -1,0 +1,137 @@
+* {
+  font-family: "Poppins";
+}
+
+ion-row {
+  padding-left: 25px;
+}
+
+ion-header {
+  z-index: 0;
+}
+
+ion-icon {
+  color: #000000;
+  font-size: 20px;
+}
+#resume-title {
+  font-size: 50px;
+  color: #000000;
+}
+
+#resume-title:hover {
+  border-bottom: 2px solid #000000;
+}
+
+#sub-text {
+  font-size: 20px;
+  color: #000000;
+}
+
+#resume-view-button {
+  width: 120px;
+  height: 35px;
+  outline: none;
+  font-size: 17px;
+}
+
+#resume-view-button:hover {
+  opacity: 0.7;
+  transition: 10ms;
+}
+
+/* Header styles */
+
+.topnav {
+  overflow: hidden;
+  background-color: #ffffff;
+  padding-left: 20px;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+  border-bottom: 2px solid #ffffff;
+}
+
+.topnav a:hover {
+  border-bottom: 2px solid #000000;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+/* Footer styles */
+
+.footer-content {
+  background-color: var(
+    --ion-card-background,
+    var(--ion-item-background, var(--ion-background-color, #fff))
+  );
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: var(--ion-color-step-850, #262626);
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-content-mobile {
+  background-color: #000000;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: var(--ion-color-step-850, #262626);
+  position: relative;
+}
+
+#footer-about-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#footer-connect-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ion-icon {
+  color: #8490ff;
+  font-size: 30px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
